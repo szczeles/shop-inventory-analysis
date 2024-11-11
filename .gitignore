@@ -1,0 +1,5 @@
+.venv
+.ipynb_checkpoints
+etl/inputs/*.csv
+etl/outputs/*.csv
+etl/outputs/*.html
