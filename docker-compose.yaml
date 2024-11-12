@@ -1,8 +1,14 @@
 services:
   etl:
     build: etl
+    volumes:
+    - ./etl/inputs:/inputs:ro
+    - ./etl/outputs:/outputs:rw
   db:
     image: "postgres:17.0"
+    depends_on:
+      etl:
+        condition: service_completed_successfully
     environment:
       POSTGRES_PASSWORD: products
     volumes:
