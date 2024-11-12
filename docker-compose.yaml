@@ -1,0 +1,10 @@
+services:
+  etl:
+    build: etl
+  db:
+    image: "postgres:17.0"
+    environment:
+      POSTGRES_PASSWORD: products
+    volumes:
+    - ./etl/outputs:/data:ro
+    - ./etl/db-init.sql:/docker-entrypoint-initdb.d/db-init.sql:ro
