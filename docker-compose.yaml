@@ -4,6 +4,7 @@ services:
     volumes:
     - ./etl/inputs:/inputs:ro
     - ./etl/outputs:/outputs:rw
+
   db:
     image: "postgres:17.0"
     depends_on:
@@ -14,3 +15,15 @@ services:
     volumes:
     - ./etl/outputs:/data:ro
     - ./etl/db-init.sql:/docker-entrypoint-initdb.d/db-init.sql:ro
+    ports:
+    - "5432:5432"
+
+  api:
+    build: api
+    depends_on:
+      db:
+        condition: service_started
+    environment:
+      SQLALCHEMY_DATABASE_URI: postgresql+psycopg2://postgres:products@db/postgres
+    ports:
+    - "8000:8000"

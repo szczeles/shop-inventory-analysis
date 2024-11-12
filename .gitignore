@@ -1,5 +1,9 @@
+# python
 .venv
+__pycache__
 .ipynb_checkpoints
+
+# etl inputs+outputs
 etl/inputs/*.csv
 etl/outputs/*.csv
 etl/outputs/*.html
