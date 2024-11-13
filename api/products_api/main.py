@@ -41,7 +41,7 @@ app = FastAPI()
     "/v1/product/{upc}", response_model=Product, responses={404: {"model": Message}}
 )
 def get_product(
-    upc: Annotated[str, Path(title="UPC of the product", regex="^[0-9]{14}$")],
+    upc: Annotated[str, Path(title="UPC of the product", pattern="^[0-9]{14}$")],
     repository: ProductsRepository = Depends(get_products_repository),
 ) -> Product | JSONResponse:
     """
