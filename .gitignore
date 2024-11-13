@@ -2,6 +2,7 @@
 .venv
 __pycache__
 .ipynb_checkpoints
+.coverage
 
 # etl inputs+outputs
 etl/inputs/*.csv
