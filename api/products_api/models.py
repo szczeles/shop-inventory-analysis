@@ -1,6 +1,5 @@
 # generated using https://github.com/agronholm/sqlacodegen
-# sqlacodegen postgresql://postgres:products@localhost/postgres > models.py
-# and adjusted to use singular in class names
+# sqlacodegen postgresql://postgres:products@localhost/postgres | sed -e's/Products/Product/g' -e's/ProductAlternates/ProductAlternate/g' > products_api/models.py
 
 import datetime
 import decimal
@@ -42,10 +41,10 @@ class Product(Base):
     inventory_level: Mapped[Optional[int]] = mapped_column(Integer)
     inventory_updated_at: Mapped[Optional[datetime.datetime]] = mapped_column(DateTime)
     created_at: Mapped[Optional[datetime.datetime]] = mapped_column(
-        DateTime, server_default=text("now()")
+        DateTime, server_default=text("CURRENT_TIMESTAMP")
     )
     updated_at: Mapped[Optional[datetime.datetime]] = mapped_column(
-        DateTime, server_default=text("now()")
+        DateTime, server_default=text("CURRENT_TIMESTAMP")
     )
 
     product_alternates: Mapped[List["ProductAlternate"]] = relationship(
@@ -70,7 +69,7 @@ class ProductAlternate(Base):
     )
     case_pack: Mapped[Optional[float]] = mapped_column(Float)
     created_at: Mapped[Optional[datetime.datetime]] = mapped_column(
-        DateTime, server_default=text("now()")
+        DateTime, server_default=text("CURRENT_TIMESTAMP")
     )
 
     product: Mapped["Product"] = relationship(

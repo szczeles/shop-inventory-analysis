@@ -1,0 +1,10 @@
+product_upc,item_number,item_description,case_upc,case_pack,department,supplier
+000000000000000001000,0,Valid product,,10.0,1,Supplier
+000000000000000001001,1,Supplier with comma,,10.0,1,Company, Inc
+000000000000000001002,2,Product with variant,,20.0,1,Supplier
+000000000000000001003,2,Product with variant,,20.0,Supplier
+000000000000000002000,20,Duplicated UPC,,20.0,1,Supplier
+000000000000000002000,21,Duplicated UPC,,20.0,1,Supplier
+000000000000000003000,30,Product with case alternate,3001,20.0,1,Supplier
+000000000000000004000,40,Product with case and variant,4002,20.0,1,Supplier
+000000000000000004001,40,Product with case and variant,4002,20.0,Supplier

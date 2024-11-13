@@ -7,8 +7,8 @@ CREATE TABLE products (
   supplier TEXT,
   inventory_level INT,
   inventory_updated_at TIMESTAMP,
-  created_at TIMESTAMP DEFAULT NOW(),
-  updated_at TIMESTAMP DEFAULT NOW(),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 
   UNIQUE (upc)
 );
@@ -21,7 +21,7 @@ CREATE TABLE product_alternates (
   upc VARCHAR(14),
   alternate_type alternate_type,
   case_pack REAL,
-  created_at TIMESTAMP DEFAULT NOW(),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 
   CONSTRAINT fk_product
       FOREIGN KEY (product_id)

@@ -1,0 +1,6 @@
+product_alternate_id,product_id,upc,alternate_type,case_pack
+0,4,00000000002000,variant,
+1,2,00000000001003,variant,
+2,7,00000000004001,variant,
+3,6,00000000003001,case,20.0
+4,7,00000000004002,case,20.0

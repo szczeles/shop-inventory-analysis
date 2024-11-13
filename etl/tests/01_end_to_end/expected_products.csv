@@ -1,0 +1,7 @@
+product_id,upc,name,item_number,price,supplier,inventory_level,inventory_updated_at
+0,00000000001000,Valid product,0,12.34,Supplier,10,2024-11-13
+1,00000000001001,Supplier with comma,1,12.34,"Company, Inc",10,2024-11-13
+2,00000000001002,Product with variant,2,12.34,Supplier,10,2024-11-13
+4,00000000002000,Duplicated UPC,20,10.0,Supplier,10,2024-11-13
+6,00000000003000,Product with case alternate,30,10.0,Supplier,10,2024-11-13
+7,00000000004000,Product with case and variant,40,10.0,Supplier,10,2024-11-13
